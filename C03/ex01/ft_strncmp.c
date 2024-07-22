@@ -6,7 +6,7 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 09:20:19 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/22 02:01:20 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/22 18:16:56 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	i = 0;
 	if (isnull(s1, s2))
 		return (0);
-	while (i <= n && *s1 && *s2)
+	while (i < n && *s1 && *s2)
 	{
 		result = char_comp(*s1, *s2);
 		if (result != 0)
@@ -58,10 +58,10 @@ int	main(void)
 	char	*str1;
 	char	*str2;
 
-	str1 = "Hellow";
-	str2 = "Hello";
+	str1 = "hihaho";
+	str2 = "ahaiao";
 	printf(" Now as thou can see the comparaison be\
-	tween them is like %d", ft_strncmp(str1, str2, 5));
+	tween them is like %d", ft_strncmp(str1, str2, 0));
 	return (0);
 }
 */
