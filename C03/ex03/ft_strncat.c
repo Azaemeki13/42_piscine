@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cauffret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 15:08:41 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/21 20:19:20 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/22 02:12:49 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,22 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	start = dest;
 	while (*dest)
 		dest++;
-	while (i < nb)
+	while (i < nb && *src)
 	{
 		*dest = *src;
 		dest++;
 		src++;
 		i++;
 	}
+	*dest = '\0';
 	return (start);
 }
 /*
 int	main(void)
 {
 	char	dest[] = "Hello";
-	char	src[] = "wy";
+	char	src[] = "World";
 
-	printf("%s", ft_strncat(dest, src, 1));
+	printf("%s", ft_strncat(dest, src, 2));
 }
 */

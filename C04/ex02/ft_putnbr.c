@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cauffret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 19:07:53 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/18 09:42:01 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/22 02:14:24 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ void	ft_putnbr(int nb)
 	}
 	ft_putchar(nb % 10 + '0');
 }
-
+/*
 int	main(void)
 {
 	ft_putnbr(0);
 }
+*/

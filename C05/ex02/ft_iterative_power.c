@@ -3,34 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cauffret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 20:33:48 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/21 20:33:52 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/22 04:00:32 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int ft_iterative_power(int nb, int power)
+int	ft_iterative_power(int nb, int power)
 {
-    int easy;
+	int	easy;
 
-    easy = nb;
-    if (power < 0)
-        return (0);
-    if (power == 0)
-        return (1);
-    while (power > 1)
-    {
-        easy *= nb;
-        power--;
-    }
-    return (easy);
+	easy = nb;
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	while (power > 1)
+	{
+		easy *= nb;
+		power--;
+	}
+	return (easy);
 }
-int main(void)
+/*
+int	main(void)
 {
-    int nb = 5;
-    int power = 3;
-    printf("%d", ft_iterative_power(nb,power));
+	int	nb;
+	int	power;
+
+	nb = 5;
+	power = 3;
+	printf("%d", ft_iterative_power(nb, power));
 }
+*/

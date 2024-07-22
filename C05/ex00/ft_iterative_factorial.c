@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cauffret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 18:06:39 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/19 19:35:00 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/22 03:17:26 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,15 @@ int	is_positive(int nb)
 		a = 0;
 		return (a);
 	}
+	
 }
 
 int	ft_iterative_factorial(int nb)
 {
 	int	count;
+	
+	if (nb == 0)
+		return (1);	
 
 	if (is_positive(nb))
 	{

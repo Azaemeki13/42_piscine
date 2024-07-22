@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cauffret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 09:20:19 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/21 20:19:08 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/22 02:01:20 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	main(void)
 	str1 = "Hellow";
 	str2 = "Hello";
 	printf(" Now as thou can see the comparaison be\
-	tween them is like %d", ft_strncmp(str1, str2, 6));
+	tween them is like %d", ft_strncmp(str1, str2, 5));
 	return (0);
 }
 */
