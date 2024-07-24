@@ -6,7 +6,7 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 22:36:02 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/22 04:39:46 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/24 12:18:22 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ int	ft_sqrt(int nb)
 		nb -= odd;
 		odd += 2;
 		counter++;
+		if (nb < 0)
+			return (0);
 	}
-	if (nb < 0)
-		return (-1);
-	else
+	if (nb == 0)
 		return (counter);
 }
 /*
 int	main(void)
 {
-	printf("%d", ft_sqrt(25));
+	printf("%d", ft_sqrt(17));
 }
 */
