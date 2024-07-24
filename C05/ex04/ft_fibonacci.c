@@ -6,7 +6,7 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 21:21:35 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/22 04:38:31 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/24 10:31:56 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_fibonacci(int index)
 {
-	if  (index > 0 && index <= 2)
+	if (index > 0 && index <= 2)
 		return (1);
 	if (index < 0)
 		return (-1);

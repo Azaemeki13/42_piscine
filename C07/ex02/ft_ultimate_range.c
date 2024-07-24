@@ -1,35 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/19 19:35:53 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/24 10:31:28 by cauffret         ###   ########.fr       */
+/*   Created: 2024/07/23 18:39:49 by cauffret          #+#    #+#             */
+/*   Updated: 2024/07/24 10:26:42 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-int	ft_recursive_factorial(int nb)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	if (nb == 0)
-		return (1);
-	if (nb >= 1)
+	int	*array;
+	int	i;
+
+	i = 0;
+	if (min >= max)
 	{
-		return (nb * ft_recursive_factorial(nb - 1));
-	}
-	else
+		*range = NULL;
 		return (0);
+	}
+	array = (int *)malloc(sizeof(int) * (max - min));
+	if (array == NULL)
+	{
+		*range = NULL;
+		return (-1);
+	}
+	while (i < (max - min))
+	{
+		array[i] = min + i;
+		i++;
+	}
+	*range = array;
+	return (i);
 }
 /*
 int	main(void)
 {
-	int	nb;
+	int	min;
+	int	max;
+	int	*range;
+	int	i;
 
-	nb =5;
-	printf("%d",ft_recursive_factorial(nb));
+	min = 0;
+	max = 7;
+	i = ft_ultimate_range(&range, min,max);
+	printf("%d", i);
+	free(range);
 	return (0);
 }
 */

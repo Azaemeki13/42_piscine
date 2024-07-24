@@ -6,12 +6,12 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 18:22:41 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/23 18:34:04 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/23 18:38:41 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-// #include <stdio.h>
+#include <stdio.h>
 
 int *ft_range(int min, int max)
 {
@@ -19,8 +19,11 @@ int *ft_range(int min, int max)
     int i;
 
     i = 0;
-    if (min > max)
-        return (NULL);
+    if (min >= max)
+        {
+            array = NULL;
+            return (array);
+        }
     array =(int*) malloc(sizeof(int) * (max-min));
     while (i < (max-min))
     {
