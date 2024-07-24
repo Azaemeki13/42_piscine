@@ -6,7 +6,7 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 22:36:02 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/24 12:18:22 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/24 13:40:04 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	ft_sqrt(int nb)
 	}
 	if (nb == 0)
 		return (counter);
+		else
+			return (0); 
 }
 /*
 int	main(void)
