@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   concat_all.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/23 11:06:54 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/25 13:34:42 by cauffret         ###   ########.fr       */
+/*   Created: 2024/07/25 09:53:57 by cauffret          #+#    #+#             */
+/*   Updated: 2024/07/25 10:13:50 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-char	*ft_strdup(char *src)
+char    *nav_them_all(char *nav, char *ptr_nav)
 {
-	char	*dest;
-	char	*base;
-	int		i;
-
-	i = 0;
-	dest = (char *)malloc(sizeof(*src) * 1);
-	base = dest;
-	while (src[i] != 0)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (base);
+    while (*ptr_nav != '\0')
+    {
+        *nav = *ptr_nav; 
+        nav++;
+        ptr_nav++;
+    }
+    return (nav);   
 }
-/*
-int	main(void)
+
+char    *sep_them_all(char *nav, char *ptr_sep)
 {
-	char	*base;
-
-	printf("%s", ft_strdup("hey there"));
+    while (*ptr_sep != '\0')
+    {
+        *nav = *ptr_sep;
+        nav++;
+        ptr_sep++;
+    }
+    return (nav);
 }
-*/

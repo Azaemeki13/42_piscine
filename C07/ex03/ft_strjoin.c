@@ -5,90 +5,112 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 10:27:38 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/24 18:33:45 by cauffret         ###   ########.fr       */
+/*   Created: 2024/07/25 08:00:11 by cauffret          #+#    #+#             */
+/*   Updated: 2024/07/25 13:35:13 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_counstr(char *str)
+int	strcount(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (*str)
 	{
-		str++;
 		i++;
+		str++;
 	}
 	return (i);
 }
 
+int	countall(int size, char **strs, char *sep)
+{
+	int	index;
+	int	total_length;
+
+	index = 0;
+	total_length = 0;
+	if (size == 0)
+		return (0);
+	while (index < size)
+	{
+		total_length += strcount(strs[index]);
+		index++;
+	}
+	total_length += strcount(sep) * size - 1;
+	return (total_length);
+}
+
+char	*nav_them_all(char *nav, char *ptr_nav)
+{
+	while (*ptr_nav != '\0')
+	{
+		*nav = *ptr_nav;
+		nav++;
+		ptr_nav++;
+	}
+	return (nav);
+}
+
+char	*sep_them_all(char *nav, char *ptr_sep)
+{
+	while (*ptr_sep != '\0')
+	{
+		*nav = *ptr_sep;
+		nav++;
+		ptr_sep++;
+	}
+	return (nav);
+}
+
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	int		total_length;
 	int		index;
-	char	*final;
 	char	*nav;
-	char	*sgl_ptr;
-	char	*sep_ptr;
+	char	*ptr_nav;
+	char	*ptr_sep;
+	char	*finish_str;
 
-	total_length = 0;
+	index = countall(size, strs, sep);
+	finish_str = malloc(sizeof(char) * (index + 1));
 	index = 0;
+	nav = finish_str;
 	while (index < size)
 	{
-		total_length += ft_counstr(strs[index]);
-        if ( index < size -1)
-            total_length += ft_counstr(sep);
-        index++;
-	}
-	final = (char *)malloc(sizeof(char) * total_length + 1);
-	if (final == NULL)
-		return (NULL);
-	nav = final;
-	index = 0;
-	while (index < size)
-	{
-		sgl_ptr = strs[index];
-		while (*sgl_ptr)
-		{
-			*nav = *sgl_ptr;
-			nav++;
-			sgl_ptr++;
-		}
+		ptr_nav = strs[index];
+		ptr_sep = sep;
+		nav = nav_them_all(nav, ptr_nav);
 		if (index < size - 1)
-		{
-			sep_ptr = sep;
-			while (*sep_ptr)
-			{
-				*nav = *sep_ptr;
-				nav++;
-				sep_ptr++;
-			}
-		}
+			nav = sep_them_all(nav, ptr_sep);
 		index++;
 	}
 	*nav = '\0';
-	return (final);
+	return (finish_str);
 }
 /*
 int	main(void)
 {
-	char	*strs[] = {"fucking", "exercise", "I hate you", "nah for real"};
+	char	*strs[] = {"Hello", "world","is", "a", "test"};
 	char	*sep;
 	char	*result;
 
+	// Define some test strings and separators
 	sep = " ";
-	result = ft_strjoin(4, strs, sep);
+	// Join the strings with the separator
+	result = ft_strjoin(6, strs, sep);
+	// Print the result
 	if (result)
 	{
-		printf("%s\n", result);
-		free(result);
+		printf("Joined string: %s\n", result);
+		free(result); // Don't forget to free the allocated memory
 	}
 	else
-		printf("SYKE");
+	{
+		printf("Memory allocation failed\n");
+	}
 	return (0);
 }
 */
