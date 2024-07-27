@@ -6,7 +6,7 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 01:10:24 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/22 04:00:09 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/27 12:50:23 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,17 @@ void	ft_putstr(char *str)
 		str++;
 	}
 }
-/*
+
 int	main(int argc, char **argv)
 {
-    int i;
+	int	i;
 
-    i = argc -1;
-            while (i > 0)
-            {
-                ft_putstr(argv[i]);
-                ft_putchar('\n');
-                i--;
-            }
+	i = argc - 1;
+	while (i > 0)
+	{
+		ft_putstr(argv[i]);
+		ft_putchar('\n');
+		i--;
+	}
 	return (0);
 }
-*/
