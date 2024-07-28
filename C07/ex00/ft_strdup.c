@@ -6,12 +6,24 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 11:06:54 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/27 13:03:23 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/28 13:00:57 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+
+int	str_mlen(char *src)
+{
+	int	i;
+
+	i = 0;
+	while (*src++)
+	{
+		i++;
+	}
+	return (i + 1);
+}
 
 char	*ft_strdup(char *src)
 {
@@ -20,7 +32,7 @@ char	*ft_strdup(char *src)
 	int		i;
 
 	i = 0;
-	dest = (char *)malloc(sizeof(*src) * 1);
+	dest = (char *)malloc(sizeof(char) * str_mlen(src));
 	base = dest;
 	while (src[i] != 0)
 	{

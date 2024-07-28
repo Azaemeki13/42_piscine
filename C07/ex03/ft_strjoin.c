@@ -6,7 +6,7 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:00:11 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/27 13:04:35 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/28 13:25:41 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,26 +91,44 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (finish_str);
 }
 /*
-int	main(void)
+int main()
 {
-	char	*strs[] = {"Hello", "world","is", "a", "test"};
-	char	*sep;
-	char	*result;
+    char *strings[] = {"Hello", "World", "!"};
+    char *separator = ", ";
+    char *result;
 
-	// Define some test strings and separators
-	sep = " ";
-	// Join the strings with the separator
-	result = ft_strjoin(6, strs, sep);
-	// Print the result
-	if (result)
-	{
-		printf("Joined string: %s\n", result);
-		free(result); // Don't forget to free the allocated memory
-	}
-	else
-	{
-		printf("Memory allocation failed\n");
-	}
-	return (0);
+    // Test with size > 0
+    result = ft_strjoin(3, strings, separator);
+    if (result != NULL)
+    {
+        printf("Joined string: '%s'\n", result);
+        free(result);  // Free the allocated memory
+    }
+
+    // Test with size 0
+    result = ft_strjoin(0, strings, separator);
+    if (result != NULL)
+    {
+        printf("Result for size 0: '%s'\n", result);  // Should print an empty string
+        free(result);  // Free the allocated empty string
+    }
+
+    // Additional tests with different inputs
+    char *more_strings[] = {"This", "is", "a", "test"};
+    result = ft_strjoin(4, more_strings, " ");
+    if (result != NULL)
+    {
+        printf("Joined string: '%s'\n", result);
+        free(result);  // Free the allocated memory
+    }
+
+    result = ft_strjoin(0, more_strings, " ");
+    if (result != NULL)
+    {
+        printf("Result for size 0: '%s'\n", result);  // Should print an empty string
+        free(result);  // Free the allocated empty string
+    }
+
+    return 0;
 }
 */
