@@ -6,7 +6,7 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 18:22:41 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/27 13:03:30 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/28 17:29:56 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	*ft_range(int min, int max)
 {
-	int	*array;
-	int	i;
+	int			*array;
+	long int	i;
 
 	i = 0;
 	if (min >= max)

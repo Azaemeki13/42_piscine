@@ -6,7 +6,7 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:00:11 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/28 13:25:41 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/28 18:01:44 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 int	strcount(char *str)
 {
-	int	i;
+	long int	i;
 
 	i = 0;
+	if (str == NULL)
+		return (0);
 	while (*str)
 	{
 		i++;
@@ -28,8 +30,8 @@ int	strcount(char *str)
 
 int	countall(int size, char **strs, char *sep)
 {
-	int	index;
-	int	total_length;
+	long int	index;
+	long int	total_length;
 
 	index = 0;
 	total_length = 0;
@@ -37,9 +39,13 @@ int	countall(int size, char **strs, char *sep)
 		return (0);
 	while (index < size)
 	{
+		if (strs[index] == NULL)
+			return (-1);
 		total_length += strcount(strs[index]);
 		index++;
 	}
+	if (sep == NULL)
+		return (-1);
 	total_length += strcount(sep) * size - 1;
 	return (total_length);
 }
@@ -68,13 +74,15 @@ char	*sep_them_all(char *nav, char *ptr_sep)
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	int		index;
-	char	*nav;
-	char	*ptr_nav;
-	char	*ptr_sep;
-	char	*finish_str;
+	long int	index;
+	char		*nav;
+	char		*ptr_nav;
+	char		*ptr_sep;
+	char		*finish_str;
 
 	index = countall(size, strs, sep);
+	if (index < 0)
+		return (NULL);
 	finish_str = malloc(sizeof(char) * (index + 1));
 	index = 0;
 	nav = finish_str;
@@ -91,44 +99,21 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (finish_str);
 }
 /*
-int main()
+int	main(void)
 {
-    char *strings[] = {"Hello", "World", "!"};
-    char *separator = ", ";
-    char *result;
+	char	*strs[3] = {"Hello", NULL, "World"};
+	char	*sep;
+	char	*result;
 
-    // Test with size > 0
-    result = ft_strjoin(3, strings, separator);
-    if (result != NULL)
-    {
-        printf("Joined string: '%s'\n", result);
-        free(result);  // Free the allocated memory
-    }
-
-    // Test with size 0
-    result = ft_strjoin(0, strings, separator);
-    if (result != NULL)
-    {
-        printf("Result for size 0: '%s'\n", result);  // Should print an empty string
-        free(result);  // Free the allocated empty string
-    }
-
-    // Additional tests with different inputs
-    char *more_strings[] = {"This", "is", "a", "test"};
-    result = ft_strjoin(4, more_strings, " ");
-    if (result != NULL)
-    {
-        printf("Joined string: '%s'\n", result);
-        free(result);  // Free the allocated memory
-    }
-
-    result = ft_strjoin(0, more_strings, " ");
-    if (result != NULL)
-    {
-        printf("Result for size 0: '%s'\n", result);  // Should print an empty string
-        free(result);  // Free the allocated empty string
-    }
-
-    return 0;
+	// Example with NULL pointers to cause segmentation fault
+	sep = NULL;
+	result = ft_strjoin(3, strs, sep);
+	// Print result (if it somehow works without crashing, which it shouldn't)
+	if (result)
+	{
+		printf("%s\n", result);
+		free(result);
+	}
+	return (0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 11:06:54 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/28 13:00:57 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/28 18:03:45 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	str_mlen(char *src)
 {
-	int	i;
+	long int	i;
 
 	i = 0;
 	while (*src++)
@@ -27,9 +27,9 @@ int	str_mlen(char *src)
 
 char	*ft_strdup(char *src)
 {
-	char	*dest;
-	char	*base;
-	int		i;
+	char		*dest;
+	char		*base;
+	long int	i;
 
 	i = 0;
 	dest = (char *)malloc(sizeof(char) * str_mlen(src));

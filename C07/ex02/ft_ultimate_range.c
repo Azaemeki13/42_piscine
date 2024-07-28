@@ -6,7 +6,7 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 18:39:49 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/27 13:04:20 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/28 17:30:03 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
-	int	*array;
-	int	i;
+	int			*array;
+	long int	i;
 
 	i = 0;
 	if (min >= max)
