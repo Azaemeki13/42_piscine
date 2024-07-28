@@ -1,44 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcount.c                                         :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 09:42:50 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/27 13:05:12 by cauffret         ###   ########.fr       */
+/*   Created: 2024/07/27 15:28:44 by cauffret          #+#    #+#             */
+/*   Updated: 2024/07/27 17:57:11 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef FT_BOOLEAN_H
+#define FT_BOOLEAN_H
 
-int	strcount(char *str)
-{
-	int	i;
+typedef int t_bool;
+#define TRUE 1
+#define FALSE 0
+#define EVEN(nbr) ((nbr) % 2 == 0)
 
-	i = 0;
-	while (*str)
-	{
-		i++;
-		str++;
-	}
-	return (i);
-}
-
-int	countall(int size, char **strs, char *sep)
-{
-	int	index;
-	int	total_length;
-
-	index = 0;
-	total_length = 0;
-	if (size == 0)
-		return (0);
-	while (index < size)
-	{
-		total_length += strcount(strs[index]);
-		index++;
-	}
-	total_length += strcount(sep) * size - 1;
-	return (total_length);
-}
+#endif

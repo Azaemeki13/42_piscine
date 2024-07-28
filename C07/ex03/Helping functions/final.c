@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   final.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 10:27:38 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/24 18:54:13 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/27 13:05:08 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	while (index < size)
 	{
 		total_length += ft_counstr(strs[index]);
-        if ( index < size -1)
-            total_length += ft_counstr(sep);
-        index++;
+		if (index < size - 1)
+			total_length += ft_counstr(sep);
+		index++;
 	}
 	final = (char *)malloc(sizeof(char) * total_length + 1);
 	if (final == NULL)

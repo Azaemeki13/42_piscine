@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int	strcount(char *str)
 {
@@ -54,65 +54,58 @@ char	*sep_them_all(char *nav, char *ptr_sep)
 	return (nav);
 }
 
-char *ft_strjoin(int size, char **strs, char *sep)
+char	*ft_strjoin(int size, char **strs, char *sep)
 {
-    int index;
-    char *nav;
-    char *ptr_nav;
-    char *ptr_sep;
-    char *finish_str;
+	int		index;
+	char	*nav;
+	char	*ptr_nav;
+	char	*ptr_sep;
+	char	*finish_str;
 
-    // Calculate total length of the resulting string
-    index = countall(size, strs, sep);
-
-    // Allocate memory for the resulting string
-    finish_str = malloc(sizeof(char) * (index + 1));
-    if (!finish_str)
-        return (NULL); // Check for successful memory allocation
-
-    nav = finish_str; // Start filling from the beginning of the allocated memory
-
-    // Loop through each string in strs
-    index = 0;
-    while (index < size)
-    {
-        ptr_nav = strs[index]; // Pointer to the current string
-        ptr_sep = sep; // Pointer to the separator
-
-        // Copy the current string to finish_str
-        nav = nav_them_all(nav, ptr_nav);
-
-        // If not the last string, add the separator
-        if (index < size - 1)
-            nav = sep_them_all(nav, ptr_sep);
-
-        index++;
-    }
-
-    *nav = '\0'; // Null-terminate the resulting string
-    return (finish_str);
+	// Calculate total length of the resulting string
+	index = countall(size, strs, sep);
+	// Allocate memory for the resulting string
+	finish_str = malloc(sizeof(char) * (index + 1));
+	if (!finish_str)
+		return (NULL); // Check for successful memory allocation
+	nav = finish_str;
+		// Start filling from the beginning of the allocated memory
+	// Loop through each string in strs
+	index = 0;
+	while (index < size)
+	{
+		ptr_nav = strs[index]; // Pointer to the current string
+		ptr_sep = sep;         // Pointer to the separator
+		// Copy the current string to finish_str
+		nav = nav_them_all(nav, ptr_nav);
+		// If not the last string, add the separator
+		if (index < size - 1)
+			nav = sep_them_all(nav, ptr_sep);
+		index++;
+	}
+	*nav = '\0'; // Null-terminate the resulting string
+	return (finish_str);
 }
 
-int main(void)
+int	main(void)
 {
-    // Define some test strings and separators
-    char *strs[] = {"Hello", "world", "this", "is", "a", "test"};
-    char *sep = " ";
-    char *result;
+	char	*strs[] = {"Hello", "world", "this", "is", "a", "test"};
+	char	*sep;
+	char	*result;
 
-    // Join the strings with the separator
-    result = ft_strjoin(6, strs, sep);
-
-    // Print the result
-    if (result)
-    {
-        printf("Joined string: %s\n", result);
-        free(result); // Don't forget to free the allocated memory
-    }
-    else
-    {
-        printf("Memory allocation failed\n");
-    }
-
-    return 0;
+	// Define some test strings and separators
+	sep = " ";
+	// Join the strings with the separator
+	result = ft_strjoin(6, strs, sep);
+	// Print the result
+	if (result)
+	{
+		printf("Joined string: %s\n", result);
+		free(result); // Don't forget to free the allocated memory
+	}
+	else
+	{
+		printf("Memory allocation failed\n");
+	}
+	return (0);
 }
