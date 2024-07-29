@@ -6,7 +6,7 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:00:11 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/28 18:01:44 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/29 15:26:39 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,22 +98,21 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	*nav = '\0';
 	return (finish_str);
 }
-/*
-int	main(void)
-{
-	char	*strs[3] = {"Hello", NULL, "World"};
-	char	*sep;
-	char	*result;
 
-	// Example with NULL pointers to cause segmentation fault
-	sep = NULL;
-	result = ft_strjoin(3, strs, sep);
-	// Print result (if it somehow works without crashing, which it shouldn't)
-	if (result)
-	{
-		printf("%s\n", result);
-		free(result);
-	}
-	return (0);
+int main(void)
+{
+    // Test case 1: Normal case
+    char *strs1[] = {"Hello", "world", "this", "is", "a", "test"};
+    char *sep1 = ", ";
+    char *result1 = ft_strjoin(6, strs1, sep1);
+    if (result1)
+    {
+        printf("Result 1: %s\n", result1);
+        free(result1);
+    }
+    else
+    {
+        printf("Result 1: NULL\n");
+    }
+	return 0;
 }
-*/

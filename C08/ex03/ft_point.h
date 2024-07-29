@@ -6,18 +6,18 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 13:56:50 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/28 15:12:09 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/29 10:53:17 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_POINT_H
 
-#define FT_POINT_H
+# define FT_POINT_H
 
 typedef struct s_point
 {
-    int x;
-    int y;
-} t_point;
+	int	x;
+	int	y;
+}		t_point;
 
 #endif

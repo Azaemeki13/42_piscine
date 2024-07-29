@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cauffret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 14:53:34 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/28 14:56:23 by cauffret         ###   ########.fr       */
+/*   Created: 2024/07/10 14:57:32 by cauffret          #+#    #+#             */
+/*   Updated: 2024/07/11 15:54:13 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <stdio.h>
-#include "ft_point.h"
+#include <unistd.h> 
 
-void set_point(t_point *point)
+// defining the function
+void	ft_putchar(char c)
 {
-    point->x = 50;
-    point->y = 21;
+	write(1, &c, 1);
 }
-int main(void)
+
+/* 
+int	main(void)
 {
-    t_point point;
-    set_point(&point);
-    printf("Point coordinates: x = %d, y = %d\n", point.x, point.y);
-    return (0);
+	ft_putchar ('D');
+	return (0);
 }
+*/

@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cauffret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 18:48:50 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/29 10:48:56 by cauffret         ###   ########.fr       */
+/*   Created: 2024/07/12 08:57:35 by cauffret          #+#    #+#             */
+/*   Updated: 2024/07/16 09:43:21 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-#ifndef FT_H
-# define FT_H
+void	ft_swap(int *a, int *b)
+{
+	int	c;
 
-// first row of prototypes
-void	ft_putchar(char c);
-void	ft_swap(int *a, int *b);
-void	ft_putstr(char *str);
-int		ft_strlen(char *str);
-int		ft_strcmp(char *s1, char *s2);
+	c = *a;
+	*a = *b;
+	*b = c;
+}
+/*
+int main(void)
+{
+	int 	number_1;
+	int	number_2;
+	int swap;
 
-#endif
+	number_1 = 0;
+	number_2 = 5;
+	ft_swap(&number_1, &number_2);
+	printf("%d, %d", number_1,number_2);
+}
+*/

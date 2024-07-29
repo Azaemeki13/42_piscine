@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cauffret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 08:22:09 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/28 08:23:23 by cauffret         ###   ########.fr       */
+/*   Created: 2024/07/12 10:22:52 by cauffret          #+#    #+#             */
+/*   Updated: 2024/07/16 09:33:58 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_boolean.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
-	while (*str)
-	write(1, str++, 1);
+	while (*str != '\0')
+	{
+		write(1, str, 1);
+		str++;
+	}
 }
-
-	t_bool ft_is_even(int nbr)
+/*
+int	main(void)
 {
-	return ((EVEN(nbr)) ? TRUE : FALSE);
+	ft_putstr("Hello World !");
 }
-
-int main(int argc, char **argv)
-{
-	(void)argv;
-	if (ft_is_even(argc - 1) == TRUE)
-		ft_putstr(EVEN_MSG);
-	else
-		ft_putstr(ODD_MSG);
-	return (SUCCESS);
-}
+*/

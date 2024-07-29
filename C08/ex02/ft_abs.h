@@ -6,14 +6,13 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 08:27:51 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/28 13:44:46 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/29 11:32:08 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 
 # define FT_ABS_H
-# define ABS(value) ((value) + (value) >> 31 ) ^ ((value) >> 31)
-
+# define ABS(value) (((value) + ((value) >> ((sizeof(int) * 8) \
+				- 1))) ^ ((value) >> ((sizeof(int) * 8) - 1)))
 #endif
-
