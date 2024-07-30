@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 15:28:44 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/28 13:36:13 by cauffret         ###   ########.fr       */
+/*   Created: 2024/07/30 08:28:44 by cauffret          #+#    #+#             */
+/*   Updated: 2024/07/30 16:43:01 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
+#include <stdlib.h>
 
-# include <unistd.h>
+int	*ft_map(int *tab, int length, int (*f)(int))
+{
+	int	*storage;
+	int	i;
 
-typedef int	t_bool;
-# define TRUE 1
-# define FALSE 0
-# define EVEN(nbr) ((nbr) % 2 == 0)
-# define EVEN_MSG "I have an even number of arguments.\n"
-# define ODD_MSG "I have an odd number of arguments.\n"
-# define SUCCESS 0
-#endif
+	i = 0;
+	storage = (int *)malloc(sizeof(int) * length);
+	if (storage == NULL)
+		return (NULL);
+	while (i < length)
+	{
+		storage[i] = (*f)(tab[i]);
+		i++;
+	}
+	return (storage);
+}

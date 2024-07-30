@@ -6,7 +6,7 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 15:32:43 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/29 18:18:37 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/30 09:31:54 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,27 @@ t_stock_str	set_it_all(char *str)
 		element.copy = NULL;
 		return (element);
 	}
-	else
+	while (i < element.size)
 	{
-		while (i < element.size)
-		{
-			element.copy[i] = str[i];
-			i++;
-		}
-		element.copy[i] = '\0';
+		element.copy[i] = str[i];
+		i++;
 	}
+	element.copy[i] = '\0';
 	return (element);
+}
+
+struct s_stock_str	*free_them_all(t_stock_str *final_array, int i)
+{
+	int	j;
+
+	j = 0;
+	while (j < i)
+	{
+		free(final_array[j].copy);
+		j++;
+	}
+	free(final_array);
+	return (NULL);
 }
 
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
@@ -69,6 +80,11 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	while (i < ac)
 	{
 		final_array[i] = set_it_all(av[i]);
+		if (final_array[i].copy == NULL)
+		{
+			final_array = free_them_all(final_array, i);
+			return (NULL);
+		}
 		i++;
 	}
 	final_array[i].size = 0;

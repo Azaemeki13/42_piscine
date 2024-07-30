@@ -6,7 +6,7 @@
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 17:50:41 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/29 18:20:20 by cauffret         ###   ########.fr       */
+/*   Updated: 2024/07/29 19:24:26 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ void	ft_putsize(int n)
 	char	c;
 
 	if (n == 0)
+	{
+		write(1, "0", 1);
 		return ;
+	}
 	if (n / 10 != 0)
 	{
 		ft_putsize(n / 10);
@@ -47,6 +50,8 @@ void	ft_show_tab(struct s_stock_str *par)
 	int	i;
 
 	i = 0;
+	if (par == NULL)
+		return ;
 	while (par[i].str != NULL)
 	{
 		ft_putstr(par[i].str);

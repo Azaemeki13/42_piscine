@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cauffret <cauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 15:28:44 by cauffret          #+#    #+#             */
-/*   Updated: 2024/07/28 13:36:13 by cauffret         ###   ########.fr       */
+/*   Created: 2024/07/30 09:42:46 by cauffret          #+#    #+#             */
+/*   Updated: 2024/07/30 16:43:10 by cauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
+#include <stdlib.h>
 
-# include <unistd.h>
+int	ft_any(char **tab, int (*f)(char *))
+{
+	int	i;
 
-typedef int	t_bool;
-# define TRUE 1
-# define FALSE 0
-# define EVEN(nbr) ((nbr) % 2 == 0)
-# define EVEN_MSG "I have an even number of arguments.\n"
-# define ODD_MSG "I have an odd number of arguments.\n"
-# define SUCCESS 0
-#endif
+	i = 0;
+	while (tab[i] != NULL)
+	{
+		if (f(tab[i]) != 0)
+			return (1);
+		i++;
+	}
+	return (0);
+}
